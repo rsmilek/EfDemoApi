@@ -18,8 +18,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Required by UseEndpoints middleware
+app.UseRouting();
+
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    // Adds endpoints for controllers actions without specifying routes which will specified by attributes in controllers
+    endpoints.MapControllers();
+});
 
 app.Run();
