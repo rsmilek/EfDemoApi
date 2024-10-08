@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EfDemo.SharedKernel\EfDemo.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>
