@@ -1,4 +1,4 @@
-namespace EfDemoApi
+namespace EfDemo.Api
 {
     public class WeatherForecast
     {

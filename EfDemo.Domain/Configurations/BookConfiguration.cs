@@ -13,6 +13,10 @@ namespace EfDemo.Domain.Configurations
             builder
                 .Property(x => x.Title)
                 .HasMaxLength(100);
+            builder
+                .Property(x => x.BasePrice)
+                .HasPrecision(18, 2);
+
         }
     }
 }

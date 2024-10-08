@@ -8,16 +8,19 @@ namespace EfDemo.Domain
     {
         private readonly IModelConfiguration modelConfiguration;
 
-        public EfDemoDbContext(DbContextOptions<EfDemoDbContext> options, IModelConfiguration modelConfiguration)
-            : base(options)
+        public EfDemoDbContext(DbContextOptions<EfDemoDbContext> options) : base(options)
+        {
+        }
+
+        public EfDemoDbContext(DbContextOptions<EfDemoDbContext> options, IModelConfiguration modelConfiguration) : base(options)
         {
             this.modelConfiguration = modelConfiguration;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //// modelBuilder.ApplyConfigurationsFromAssembly(typeof(EfDemoDbContext).Assembly);
-            modelConfiguration.ConfigureModel(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EfDemoDbContext).Assembly);
+            modelConfiguration?.ConfigureModel(modelBuilder);
         }
     }
 }
