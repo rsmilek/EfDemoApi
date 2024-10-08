@@ -10,8 +10,4 @@
     <ProjectReference Include="..\EfDemo.SharedKernel\EfDemo.SharedKernel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>
