@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace EfDemo.SharedKernel.Configuration;
+namespace EfDemo.SharedKernel.Configurations;
 
 public interface IModelConfiguration
 {

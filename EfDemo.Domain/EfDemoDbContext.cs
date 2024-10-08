@@ -1,4 +1,4 @@
-﻿using EfDemo.SharedKernel.Configuration;
+﻿using EfDemo.SharedKernel.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 
