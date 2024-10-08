@@ -23,10 +23,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+#pragma warning disable ASP0014
 app.UseEndpoints(endpoints =>
 {
-    // Adds endpoints for controllers actions without specifying routes which will specified by attributes in controllers
+    // Adds endpoints for controllers actions without specifying routes, they will be specified by attributes in controllers
     endpoints.MapControllers();
 });
+#pragma warning restore ASP0014
 
 app.Run();
