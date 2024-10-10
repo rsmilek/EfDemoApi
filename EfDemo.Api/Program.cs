@@ -1,3 +1,4 @@
+using EfDemo.Domain.Extensions;
 //using EfDemo.Infrastructure.Extensions;
 using EfDemo.Infrastructure.SqLite.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDomain();
 builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("EfDemoDbConnection"));
 
 var app = builder.Build();

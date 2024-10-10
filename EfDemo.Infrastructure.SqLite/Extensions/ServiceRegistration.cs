@@ -1,5 +1,4 @@
 ﻿using EfDemo.Domain;
-using EfDemo.Domain.Extensions;
 using EfDemo.Infrastructure.SqLite.Configurations;
 using EfDemo.SharedKernel.Configurations;
 using Microsoft.EntityFrameworkCore;
@@ -26,10 +25,7 @@ namespace EfDemo.Infrastructure.SqLite.Extensions
                 })
                 ////.EnableSensitiveDataLogging() // TODO: Remove this line in production
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-
             });
-
-            services.AddDomain();
 
             return services;
         }
