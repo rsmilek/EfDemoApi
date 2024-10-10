@@ -1,10 +1,10 @@
 ﻿using EfDemo.Domain;
-using EfDemo.Infrastructure.Configurations;
+using EfDemo.Infrastructure.SqlServer.Configurations;
 using EfDemo.SharedKernel.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EfDemo.Infrastructure.Extensions
+namespace EfDemo.Infrastructure.SqlServer.Extensions
 {
     public static class ServiceRegistration
     {

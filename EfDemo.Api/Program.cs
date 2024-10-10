@@ -1,5 +1,5 @@
 using EfDemo.Domain.Extensions;
-//using EfDemo.Infrastructure.Extensions;
+//using EfDemo.Infrastructure.SqlServer.Extensions;
 using EfDemo.Infrastructure.SqLite.Extensions;
 using Microsoft.EntityFrameworkCore;
 

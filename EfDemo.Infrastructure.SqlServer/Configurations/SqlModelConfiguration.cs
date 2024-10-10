@@ -1,7 +1,7 @@
 ﻿using EfDemo.SharedKernel.Configurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace EfDemo.Infrastructure.Configurations
+namespace EfDemo.Infrastructure.SqlServer.Configurations
 {
     public class SqlModelConfiguration : IModelConfiguration
     {
