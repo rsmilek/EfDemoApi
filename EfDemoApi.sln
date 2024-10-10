@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfDemo.Api", "EfDemo.Api\Ef
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfDemo.Domain", "EfDemo.Domain\EfDemo.Domain.csproj", "{AFC68016-E710-45CC-B3C6-0FF5242984E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfDemo.Infrastructure", "EfDemo.Infrastructure\EfDemo.Infrastructure.csproj", "{5A34E1A6-2E00-417A-8B52-13AF47CCD935}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfDemo.Infrastructure.SqLite", "EfDemo.Infrastructure.SqLite\EfDemo.Infrastructure.SqLite.csproj", "{CE59E5FA-F7ED-43BF-89CB-A04B660F0CC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfDemo.Infrastructure.SqlServer", "EfDemo.Infrastructure.SqlServer\EfDemo.Infrastructure.SqlServer.csproj", "{5A34E1A6-2E00-417A-8B52-13AF47CCD935}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfDemo.SharedKernel", "EfDemo.SharedKernel\EfDemo.SharedKernel.csproj", "{C0FC9E12-B94C-4C8C-8404-F12FE4CA4F32}"
 EndProject
@@ -16,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		IgnoredWords.dic = IgnoredWords.dic
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfDemo.Infrastructure.SqLite", "EfDemo.Infrastructure.SqLite\EfDemo.Infrastructure.SqLite.csproj", "{CE59E5FA-F7ED-43BF-89CB-A04B660F0CC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

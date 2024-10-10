@@ -17,7 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EfDemo.Domain\EfDemo.Domain.csproj" />
     <ProjectReference Include="..\EfDemo.Infrastructure.SqLite\EfDemo.Infrastructure.SqLite.csproj" />
-    <ProjectReference Include="..\EfDemo.Infrastructure\EfDemo.Infrastructure.csproj" />
+    <ProjectReference Include="..\EfDemo.Infrastructure.SqlServer\EfDemo.Infrastructure.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
