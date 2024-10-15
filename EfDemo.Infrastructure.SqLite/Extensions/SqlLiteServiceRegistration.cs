@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EfDemo.Infrastructure.SqLite.Extensions
 {
-    public static class ServiceRegistration
+    public static class SqlLiteServiceRegistration
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, string? connectionString)
+        public static IServiceCollection AddSqLiteInfrastructure(this IServiceCollection services, string? connectionString)
         {
             if (string.IsNullOrEmpty(connectionString))
             {
@@ -21,7 +21,7 @@ namespace EfDemo.Infrastructure.SqLite.Extensions
             {
                 options.UseSqlite(connectionString, sqlOptions =>
                 {
-                    sqlOptions.MigrationsAssembly(typeof(ServiceRegistration).Assembly.FullName);
+                    sqlOptions.MigrationsAssembly(typeof(SqlLiteServiceRegistration).Assembly.FullName);
                 })
                 ////.EnableSensitiveDataLogging() // TODO: Remove this line in production
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

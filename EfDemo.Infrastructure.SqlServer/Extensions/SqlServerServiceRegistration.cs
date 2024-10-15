@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EfDemo.Infrastructure.SqlServer.Extensions
 {
-    public static class ServiceRegistration
+    public static class SqlServerServiceRegistration
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, string? connectionString)
+        public static IServiceCollection AddSqlServerInfrastructure(this IServiceCollection services, string? connectionString)
         {
             if (string.IsNullOrEmpty(connectionString))
             {
@@ -21,7 +21,7 @@ namespace EfDemo.Infrastructure.SqlServer.Extensions
             {
                 options.UseSqlServer(connectionString, sqlOptions =>
                 {
-                    sqlOptions.MigrationsAssembly(typeof(ServiceRegistration).Assembly.FullName);
+                    sqlOptions.MigrationsAssembly(typeof(SqlServerServiceRegistration).Assembly.FullName);
                 })
                 ////.EnableSensitiveDataLogging() // TODO: Remove this line in production
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

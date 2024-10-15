@@ -1,6 +1,5 @@
+using EfDemo.Api.Extensions;
 using EfDemo.Domain.Extensions;
-//using EfDemo.Infrastructure.SqlServer.Extensions;
-using EfDemo.Infrastructure.SqLite.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
