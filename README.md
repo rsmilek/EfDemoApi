@@ -62,6 +62,10 @@ _Integration Tests_ - are performed on top of the infrastructure layer that allo
 _End to End tests_ - are performed on top of API layer because of that they can see how services interact with one another.
 
 
+## Best practices
+
+
+
 ## Sources
 [EF Core 8 Fundamentals](https://app.pluralsight.com/library/courses/ef-core-8-fundamentals) by Julie Lerman<br>
 [EF Core: Best Practices](https://app.pluralsight.com/library/courses/ef-core-6-best-practices/) by Michael L Perry 
