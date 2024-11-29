@@ -33,7 +33,7 @@ Packages: EF Core tools, Swashbuckle<br>
 
 **_Infrastructure_**<br>
 Components: Migrations<br>
-Packages: EF Core SQL Server, EF Core SqIte, ...<br>
+Packages: EF Core SQL Server, EF Core SqIte, EF Core Xxx<br>
 
 **_Domain_**<br>
 Components: DbContext, Entities, Services<br>
@@ -52,6 +52,63 @@ The advantage of a layered application architecture is ease of testing:<br>
 
 
 ## Best practices
+- Use generic DBContextOptions
+``` cs
+    public EfDemoDbContext(DbContextOptions<EfDemoDbContext> options, IModelConfiguration modelConfiguration) : base(options)
+    {
+        _modelConfiguration = modelConfiguration;
+    }
+``` 
+- Keep entity configurations isolated
+``` cs
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly();
+    }
+
+    public class AuthorConfiguration : IEntityTypeConfiguration<Author>
+    {
+        public void Configure(EntityTypeBuilder<Author> builder)
+        {
+            builder
+                .HasAlternateKey(x => x.AuthorGuid);
+            ...
+        }
+    }
+```
+- Keep database configuration separate from application domain & Keep migrations separate from model<br>
+Both of these practices are related to separation of concerns/application architecture (domain vs. infrastructure).
+``` cs
+    public static class SqlLiteServiceRegistration
+    {
+        public static IServiceCollection AddSqLiteInfrastructure(this IServiceCollection services, string? connectionString)
+        {
+            services.AddDbContext<EfDemoDbContext>(options =>
+            {
+                options.UseSqlite(connectionString, sqlOptions =>
+                {
+                    sqlOptions.MigrationsAssembly(typeof(SqlLiteServiceRegistration).Assembly.FullName);
+                })
+            });
+        
+            return services;
+        }
+    }
+``` 
+- Configure dependencies at the top level
+``` cs
+    builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("EfDemoDbConnection"));
+```
+- Invert dependencies to defend separation of concerns & Rely upon the IoC container to satisfy dependencies<br>
+Both of these practices are related to separation of concerns/application architecture (domain vs. infrastructure).<br>
+If the Domain project requires something from the Infrastructre project, such as model configuration, use the IoC container - declare the interface to be consumed in Domain, implement it in Infrastructure, and use the IoC container for propagation.<br>
+
+``` cs
+    public interface IModelConfiguration
+    {
+        void ConfigureModel(ModelBuilder modelBuilder);
+    }
+```
 
 
 ## Sources
