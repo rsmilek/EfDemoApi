@@ -30,9 +30,6 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorId"));
 
-                    b.Property<Guid>("AuthorGuid")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -45,9 +42,7 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.HasAlternateKey("AuthorGuid");
-
-                    b.ToTable("Author");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("EfDemo.Domain.Entities.Book", b =>
@@ -65,9 +60,6 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("BookGuid")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateOnly>("PublishDate")
                         .HasColumnType("date");
 
@@ -78,11 +70,9 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
 
                     b.HasKey("BookId");
 
-                    b.HasAlternateKey("BookGuid");
-
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Book");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("EfDemo.Domain.Entities.Book", b =>

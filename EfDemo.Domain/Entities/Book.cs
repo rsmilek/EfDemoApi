@@ -6,8 +6,6 @@ namespace EfDemo.Domain.Entities
     {
         public int BookId { get; set; }
 
-        public Guid BookGuid { get; set; }
-
         public string Title { get; set; }
         
         public DateOnly PublishDate { get; set; }

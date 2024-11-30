@@ -19,7 +19,7 @@ namespace EfDemo.Domain.Services
 
         public async Task<Author> GetAsync(int authorId)
         {
-            return await Context.Authors.FindAsync(authorId);
+            return await Context.FindAsync<Author>(authorId);
         }
     }
 }

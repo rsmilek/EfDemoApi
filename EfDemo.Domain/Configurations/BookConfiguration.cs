@@ -9,7 +9,7 @@ namespace EfDemo.Domain.Configurations
         public void Configure(EntityTypeBuilder<Book> builder)
         {
             builder
-                .HasAlternateKey(x => x.BookGuid);
+                .ToTable("Books");
             builder
                 .Property(x => x.Title)
                 .HasMaxLength(100);
