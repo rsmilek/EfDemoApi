@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EfDemo.Domain.Abstractions;
+using EfDemo.Domain.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EfDemo.Domain.Extensions
 {
@@ -6,7 +8,9 @@ namespace EfDemo.Domain.Extensions
     {
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
-            ////services.AddScoped<PromotionService>();
+            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<IBookService, BookService>();
+            
             return services;
         }
     }
