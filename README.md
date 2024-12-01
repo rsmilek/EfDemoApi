@@ -114,3 +114,4 @@ If the Domain project requires something from the Infrastructre project, such as
 ## Sources
 [EF Core 8 Fundamentals by Julie Lerman](https://app.pluralsight.com/library/courses/ef-core-8-fundamentals)<br>
 [EF Core: Best Practices by Michael L Perry](https://app.pluralsight.com/library/courses/ef-core-6-best-practices)<br>
+[Integration tests in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-9.0)
