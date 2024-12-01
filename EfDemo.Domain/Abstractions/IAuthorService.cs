@@ -4,8 +4,12 @@ namespace EfDemo.Domain.Abstractions
 {
     public interface IAuthorService
     {
-        Task<Author> AddAsync(Author author);
+        Task<IEnumerable<Author>> GetAll();
 
         Task<Author> GetAsync(int authorId);
+
+        Task<Author> AddAsync(Author author);
+
+        Task<bool> DeleteAsync(int authorId);
     }
 }
