@@ -38,3 +38,5 @@ app.UseEndpoints(endpoints =>
 #pragma warning restore ASP0014
 
 app.Run();
+
+public partial class Program { }
