@@ -40,6 +40,9 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("Nicknames")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("AuthorId");
 
                     b.ToTable("Authors", (string)null);

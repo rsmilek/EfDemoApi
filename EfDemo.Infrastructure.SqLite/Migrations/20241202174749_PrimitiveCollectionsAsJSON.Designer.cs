@@ -3,6 +3,7 @@ using System;
 using EfDemo.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EfDemo.Infrastructure.SqLite.Migrations
 {
     [DbContext(typeof(EfDemoDbContext))]
-    partial class EfDemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241202174749_PrimitiveCollectionsAsJSON")]
+    partial class PrimitiveCollectionsAsJSON
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");

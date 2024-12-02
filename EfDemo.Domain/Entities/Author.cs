@@ -13,5 +13,7 @@ namespace EfDemo.Domain.Entities
         public List<Book> Books { get; set; } = [];
 
         public ContactDetails? ContactDetails { get; set; }
+        
+        public List<string>? Nicknames { get; set; }
     }
 }

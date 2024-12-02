@@ -36,5 +36,24 @@ namespace EfDemo.Domain.Tests
             author.AuthorId.Should().NotBe(0);
             author.ContactDetails.Should().BeEquivalentTo(expectedAuthor.ContactDetails);
         }
+
+        [Fact]
+        public async Task PrimitiveCollectionsAsJSON()
+        {
+            // Arrange
+            var expectedAuthor = new Author()
+            {
+                FirstName = "Radim",
+                LastName = "Smilek",
+                Nicknames = ["RSm", "Smila"]
+            };
+
+            // Act
+            var author = await _authorService.AddAsync(expectedAuthor);
+
+            // Assert
+            author.AuthorId.Should().NotBe(0);
+            author.Nicknames.Should().BeEquivalentTo(expectedAuthor.Nicknames);
+        }
     }
 }
