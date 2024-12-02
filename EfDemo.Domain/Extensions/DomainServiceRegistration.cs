@@ -10,6 +10,7 @@ namespace EfDemo.Domain.Extensions
         {
             services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<ICoverService, CoverService>();
             
             return services;
         }

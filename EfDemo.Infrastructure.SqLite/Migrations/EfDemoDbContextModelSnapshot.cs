@@ -72,6 +72,21 @@ namespace EfDemo.Infrastructure.SqLite.Migrations
                     b.ToTable("Books", (string)null);
                 });
 
+            modelBuilder.Entity("EfDemo.Domain.Entities.Cover", b =>
+                {
+                    b.Property<int>("CoverId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CoverColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CoverId");
+
+                    b.ToTable("Covers", (string)null);
+                });
+
             modelBuilder.Entity("EfDemo.Domain.Entities.Author", b =>
                 {
                     b.OwnsOne("EfDemo.Domain.Entities.ContactDetails", "ContactDetails", b1 =>

@@ -3,6 +3,7 @@ using EfDemo.Domain.Enums;
 using EfDemo.Domain.Services;
 using EfDemo.Domain.Tests.Services;
 using FluentAssertions;
+using System.Drawing;
 
 namespace EfDemo.Domain.Tests
 {
@@ -10,11 +11,13 @@ namespace EfDemo.Domain.Tests
     {
         private readonly AuthorService _authorService;
         private readonly BookService _bookService;
+        private readonly CoverService _coverService;
 
         public NewInEFCore2Test() : base()
         {
             _authorService = new AuthorService(Context);
             _bookService = new BookService(Context, _authorService);
+            _coverService = new CoverService(Context);
         }
 
         [Fact]
@@ -42,5 +45,24 @@ namespace EfDemo.Domain.Tests
             book.BookId.Should().NotBe(0);
             book.Genre.Should().Be(expectedBook.Genre);
         }
+
+
+        [Fact]
+        public async Task ColorConversion()
+        {
+            // Arrange
+            var expectedCover = new Cover()
+            {
+                CoverColor = Color.Red
+            };
+
+            // Act
+            var cover = await _coverService.AddAsync(expectedCover);
+
+            // Assert
+            cover.CoverId.Should().NotBe(0);
+            cover.CoverColor.Should().Be(expectedCover.CoverColor);
+        }
+
     }
 }
