@@ -6,7 +6,7 @@ using System.Net.Http.Json;
 
 namespace EfDemo.Api.Tests
 {
-    public partial class EndToEndTests
+    public partial class EndToEndTest
     {
         [Fact]
         public async Task ApiIsRunning()

@@ -1,4 +1,4 @@
-using EfDemo.Api.Extensions;
+﻿using EfDemo.Api.Extensions;
 using EfDemo.Domain.Abstractions;
 using EfDemo.Domain.Entities;
 using EfDemo.Domain.Extensions;
@@ -6,18 +6,15 @@ using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace EfDemo.Integration.Tests
+namespace EfDemo.Api.Tests
 {
-    public class ServicePersistenceTest
+    public class IntegrationTest
     {
         private readonly IAuthorService _authorService;
         private readonly IBookService _bookService;
 
-        public ServicePersistenceTest()
+        public IntegrationTest()
         {
             var builder = Host.CreateDefaultBuilder()
                 .ConfigureAppConfiguration((context, config) =>
