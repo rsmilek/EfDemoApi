@@ -16,7 +16,10 @@ namespace EfDemo.Domain.Configurations
             builder
                 .Property(x => x.BasePrice)
                 .HasPrecision(18, 2);
-
+            // New in EF Core 2.1
+            builder
+                .Property(x => x.Genre)
+                .HasConversion<string>();
         }
     }
 }

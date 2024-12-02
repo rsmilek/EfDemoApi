@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EfDemo.Domain.Enums;
+using System;
 
 namespace EfDemo.Domain.Entities
 {
@@ -15,5 +16,7 @@ namespace EfDemo.Domain.Entities
         public Author Author { get; set; }
         
         public int AuthorId { get; set; }
+
+        public BookGenre? Genre { get; set; }
     }
 }

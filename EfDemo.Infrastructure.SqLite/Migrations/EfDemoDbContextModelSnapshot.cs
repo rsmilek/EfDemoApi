@@ -54,6 +54,9 @@ namespace EfDemo.Infrastructure.SqLite.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Genre")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateOnly>("PublishDate")
                         .HasColumnType("TEXT");
 
