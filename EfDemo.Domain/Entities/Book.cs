@@ -8,7 +8,8 @@ namespace EfDemo.Domain.Entities
         public int BookId { get; set; }
 
         public string Title { get; set; }
-        
+
+        // DateOnly, TimeOnly (new in EF8)
         public DateOnly PublishDate { get; set; }
         
         public decimal BasePrice { get; set; }
