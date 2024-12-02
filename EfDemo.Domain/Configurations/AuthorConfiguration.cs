@@ -16,6 +16,9 @@ namespace EfDemo.Domain.Configurations
             builder
                 .Property(x => x.LastName)
                 .HasMaxLength(100);
+            // Sub-type as JSON (new in EF7)
+            builder
+                .OwnsOne(x => x.ContactDetails, navigrationBuilder => navigrationBuilder.ToJson());
         }
     }
 }

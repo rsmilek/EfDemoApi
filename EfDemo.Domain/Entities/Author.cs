@@ -10,6 +10,8 @@ namespace EfDemo.Domain.Entities
 
         public string LastName { get; set; }
 
-        public List<Book> Books { get; set; } = new();
+        public List<Book> Books { get; set; } = [];
+
+        public ContactDetails? ContactDetails { get; set; }
     }
 }

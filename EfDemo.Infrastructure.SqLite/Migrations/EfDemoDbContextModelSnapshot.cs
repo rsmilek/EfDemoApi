@@ -66,6 +66,34 @@ namespace EfDemo.Infrastructure.SqLite.Migrations
                     b.ToTable("Books", (string)null);
                 });
 
+            modelBuilder.Entity("EfDemo.Domain.Entities.Author", b =>
+                {
+                    b.OwnsOne("EfDemo.Domain.Entities.ContactDetails", "ContactDetails", b1 =>
+                        {
+                            b1.Property<int>("AuthorId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("EmailAddress")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Phone")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("AuthorId");
+
+                            b1.ToTable("Authors");
+
+                            b1.ToJson("ContactDetails");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AuthorId");
+                        });
+
+                    b.Navigation("ContactDetails");
+                });
+
             modelBuilder.Entity("EfDemo.Domain.Entities.Book", b =>
                 {
                     b.HasOne("EfDemo.Domain.Entities.Author", "Author")
