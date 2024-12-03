@@ -14,6 +14,9 @@ namespace EfDemo.Domain.Configurations
             builder
                 .Property(x => x.CoverColor)
                 .HasConversion(c => c.ToString(), s => Color.FromName(s));
+            // Complex type (new in EF8)
+            builder
+                .ComplexProperty(x => x.Dimensions);
         }
     }
 }
