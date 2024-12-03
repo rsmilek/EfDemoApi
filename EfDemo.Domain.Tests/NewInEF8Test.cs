@@ -17,7 +17,7 @@ namespace EfDemo.Domain.Tests
         }
 
         [Fact]
-        public async Task ComplexType()
+        public async Task ComplexProperty()
         {
             var expectedCover = new Cover()
             {
