@@ -11,5 +11,7 @@ namespace EfDemo.Domain.Abstractions
         Task<Author> AddAsync(Author author);
 
         Task<bool> DeleteAsync(int authorId);
+
+        Task<IEnumerable<Author>> GetAuthorsWthBooksAsync(DateOnly bookStartDate);
     }
 }

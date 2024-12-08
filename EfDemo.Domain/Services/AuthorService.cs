@@ -42,5 +42,14 @@ namespace EfDemo.Domain.Services
             return true;
         }
 
+        public async Task<IEnumerable<Author>> GetAuthorsWthBooksAsync(DateOnly bookStartDate)
+        {
+            return await Context.Set<Author>()
+                .Include(a => a.Books
+                    .Where(b => b.PublishDate >= bookStartDate)
+                    .OrderBy(b => b.Title)
+                    )
+                .ToListAsync();
+        }
     }
 }
