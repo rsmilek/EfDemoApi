@@ -15,7 +15,7 @@ namespace EfDemo.Domain.Services
             return await Context.Set<Author>().ToListAsync();
         }
 
-        public async Task<Author> GetAsync(int authorId)
+        public async Task<Author?> GetAsync(int authorId)
         {
             return await Context.FindAsync<Author>(authorId);
         }

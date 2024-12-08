@@ -14,7 +14,13 @@ namespace EfDemo.Domain.Services
 
         public async Task<Book> AddToAuthorByIdAsync(int authorId, Book book)
         {
-            book.Author = await _authorService.GetAsync(authorId);
+            var author = await _authorService.GetAsync(authorId);
+            if (author == null)
+            {
+                throw new ArgumentException($"Author with ID {authorId} not found.", nameof(authorId));
+            }
+
+            book.Author = author;
 
             await Context.AddAsync(book);
             await Context.SaveChangesAsync();

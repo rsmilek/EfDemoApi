@@ -118,11 +118,9 @@ namespace EfDemo.Infrastructure.SqlServer.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("EmailAddress")
-                                .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
                             b1.Property<string>("Phone")
-                                .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
                             b1.HasKey("AuthorId");

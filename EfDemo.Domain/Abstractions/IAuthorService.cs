@@ -6,7 +6,7 @@ namespace EfDemo.Domain.Abstractions
     {
         Task<IEnumerable<Author>> GetAll();
 
-        Task<Author> GetAsync(int authorId);
+        Task<Author?> GetAsync(int authorId);
 
         Task<Author> AddAsync(Author author);
 
